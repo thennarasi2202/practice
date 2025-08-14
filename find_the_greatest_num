@@ -1,0 +1,20 @@
+numbers = []
+
+def getinput(num):
+    for i in range(num):
+        num = int(input("Enter the number: "))
+        numbers.append(num)
+    return numbers
+        
+    
+def greatestnum(numbers):
+    greatest = numbers[0]
+    for num in numbers[1:]:
+        if num > greatest:
+            greatest = num
+    return greatest       
+
+num = int(input("Enter number of inputs: "))
+numbers = getinput(num)
+greatest = greatestnum(numbers)
+print("The greatest number is",greatest)
