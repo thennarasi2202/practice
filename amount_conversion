@@ -1,0 +1,32 @@
+def get_user_choice():
+    choice = int(input("Enter 1 for dollar to rupees conversion \nEnter 2 for rupees to dollar conversion.\nEnter your choice (1/2): "))
+    return choice
+
+def get_amount():
+    amount = float(input("Enter the amount: "))
+    return amount
+
+def rupees_to_dollar(amount):
+    print(f"{(amount * 0.011):.2f} dollars") 
+
+def dollar_to_rupees(amount):
+    print(f"{(amount / 0.011):.2f} rupees")
+
+def validate(choice):
+    if choice != 1 and choice != 2:
+        print("Invalid Input")
+        return False
+    return True
+        
+def get_convertion(choice,amount):
+    if choice == 1:
+        return dollar_to_rupees(amount) 
+    else:
+        return rupees_to_dollar(amount) 
+
+def main():
+    choice = get_user_choice()
+    if validate(choice):
+        amount = get_amount()
+        get_convertion(choice,amount)
+main()
