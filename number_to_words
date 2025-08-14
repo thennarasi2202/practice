@@ -1,0 +1,16 @@
+number = int(input("Enter the number (0-99): "))
+
+def number_to_words(num):
+    ones = ["","one","two","three","four","five","six","seven","eight","nine"]
+    teens = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+    tens = ["","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"]
+    if num == 0:
+        return "Zero"
+    elif num < 10:
+        return ones[num]
+    elif num < 20:
+        return teens[num - 10]
+    elif num < 100:
+        return tens[num//10] + " " + ones[num % 10]
+
+print("Number in words:",number_to_words(number))
